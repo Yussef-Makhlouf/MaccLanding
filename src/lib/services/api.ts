@@ -1,4 +1,5 @@
 import { resolveServiceColor } from "./serviceColors";
+import { getMockServices, getMockServiceById } from "./mockData";
 import type {
   ApiServicesResponse,
   ApiServiceResponse,
@@ -9,7 +10,7 @@ import type {
   LocalizedServicesResponse,
 } from "./types";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://macc-fm.com/api/v1";
 
 const SERVICE_NAME_TO_ID: Record<string, string> = {
   "Hard Services": "1",
@@ -58,45 +59,62 @@ function mapApiServiceToLocalized(service: ApiService, locale: Locale): Service 
  */
 export async function getServicesByLanguage(locale: Locale): Promise<LocalizedServicesResponse> {
   try {
+    // If API URL is somehow still missing or we are in a mode where we want to force mock (optional logic)
+    // For now, rely on the fallback. But if fetch fails or URL is invalid, we might want to catch it.
+
     if (!API_BASE_URL) {
       console.warn("⚠️ API_BASE_URL is not defined. Using mock data fallback.");
-      throw new Error("API_BASE_URL not defined");
+      return {
+        services: getMockServices(locale),
+        locale
+      };
     }
+
     const url = `${API_BASE_URL}/services/`;
 
-    const response = await fetch(url, {
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
-    }
-
-    const data: ApiServicesResponse = await response.json();
-
-    if (!data.success || !Array.isArray(data.services)) {
-      throw new Error("Invalid API response format");
-    }
-
-    const localizedServices = data.services
-      .filter((service) => service.isActive)
-      .map((service) => mapApiServiceToLocalized(service, locale))
-      .sort((a, b) => {
-        // Sort by creation date if needed (newest first)
-        return 0;
+    try {
+      const response = await fetch(url, {
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
+      }
 
-    return {
-      services: localizedServices,
-      locale,
-    };
+      const data: ApiServicesResponse = await response.json();
+
+      if (!data.success || !Array.isArray(data.services)) {
+        throw new Error("Invalid API response format");
+      }
+
+      const localizedServices = data.services
+        .filter((service) => service.isActive)
+        .map((service) => mapApiServiceToLocalized(service, locale))
+        .sort((a, b) => {
+          return 0;
+        });
+
+      return {
+        services: localizedServices,
+        locale,
+      };
+    } catch (fetchError) {
+      console.warn("⚠️ Data fetching failed, falling back to mock data:", fetchError);
+      return {
+        services: getMockServices(locale),
+        locale
+      };
+    }
   } catch (error) {
     console.error("❌ Error fetching services:", error);
-    throw error;
+    // Final fallback
+    return {
+      services: getMockServices(locale),
+      locale
+    };
   }
 }
 
@@ -113,39 +131,46 @@ export async function getServiceById(id: string, locale: Locale): Promise<Servic
 
     if (!API_BASE_URL) {
       console.warn("⚠️ API_BASE_URL is not defined. Falling back to mock data.");
-      return null;
+      return getMockServiceById(id, locale) || null;
     }
 
     const url = `${API_BASE_URL}/services/${id}`;
 
-    const response = await fetch(url, {
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    try {
+      const response = await fetch(url, {
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    if (!response.ok) {
-      if (response.status === 404) {
-        console.warn(`⚠️ Service not found (404): ${id}`);
+      if (!response.ok) {
+        if (response.status === 404) {
+          console.warn(`⚠️ Service not found (404): ${id}`);
+          // Should we also check mock data if 404? Maybe not if ID implies DB ID. 
+          // But for "Stable IDs" 1-6 mapping, they might not match DB IDs if using DB.
+          // Let's assume if API 404s, we return null.
+          return null;
+        }
+        throw new Error(`HTTP Error ${response.status}: ${response.statusText}`);
+      }
+
+      const data: ApiServiceResponse = await response.json();
+
+      if (!data.success || !data.service) {
+        console.error("❌ Invalid API response format");
         return null;
       }
-      console.error(`❌ HTTP Error ${response.status}:`, response.statusText);
-      return null;
+
+      return mapApiServiceToLocalized(data.service, locale);
+
+    } catch (fetchError) {
+      console.warn(`⚠️ Fetch failed for service ${id}, checking mock data. Error:`, fetchError);
+      return getMockServiceById(id, locale) || null;
     }
 
-    const data: ApiServiceResponse = await response.json();
-
-    if (!data.success || !data.service) {
-      console.error("❌ Invalid API response format");
-      return null;
-    }
-
-    const localizedService = mapApiServiceToLocalized(data.service, locale);
-
-    return localizedService;
   } catch (error) {
     console.error("❌ Failed to fetch service:", error);
-    return null;
+    return getMockServiceById(id, locale) || null;
   }
 }

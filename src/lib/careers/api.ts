@@ -8,7 +8,7 @@ import type {
   CareerFilters,
 } from "./types";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://macc-fm.com/api/v1";
 
 // Helper function to map API career to localized career
 function mapApiCareerToLocalized(career: ApiCareer, locale: Locale): Career {
