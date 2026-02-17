@@ -6,15 +6,15 @@ import type { ServiceItem, Locale } from "@/lib/services/types";
 interface ServiceDetailsSectionProps {
   items: ServiceItem[];
   title: string;
-  isRTL: boolean; 
-  locale: Locale; 
+  isRTL: boolean;
+  locale: Locale;
 }
 
 export default function ServiceDetailsSection({
   items,
   title,
-  isRTL, 
-  locale, 
+  isRTL,
+  locale,
 }: ServiceDetailsSectionProps) {
   const t = useTranslations("Services.details");
 
@@ -30,13 +30,13 @@ export default function ServiceDetailsSection({
     >
       <div className="max-w-[1000px] container mx-auto">
         {/* Section Title */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 px-4">
           <h2
-            className="font-bold text-secondary"
+            className="font-bold text-secondary break-words"
             style={{
               ...(isRTL && { fontFamily: "LamaSans, sans-serif" }),
-    fontSize: "clamp(2rem, 4vw, 3rem)",
-              lineHeight: "110%",
+              fontSize: "clamp(1.5rem, 5vw, 3rem)",
+              lineHeight: "120%",
               letterSpacing: isRTL ? "0" : "-0.01em",
             }}
           >
@@ -45,35 +45,48 @@ export default function ServiceDetailsSection({
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0 relative">
-          {sortedItems.map((item, index) => {
-            const isLeft = index % 2 === 0;
-            const isLast = index === sortedItems.length - 1;
-            const shouldCenter = isLast && isOddCount;
+        {sortedItems.length > 0 ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0 relative">
+            {sortedItems.map((item, index) => {
+              const isLeft = index % 2 === 0;
+              const isLast = index === sortedItems.length - 1;
+              const shouldCenter = isLast && isOddCount;
 
-            return (
-              <div
-                key={item.id}
-                className={`
-                  ${shouldCenter ? "lg:col-span-2 flex justify-center" : ""}
-                  ${!isLeft ? "lg:mt-[100px]" : ""}
-                  ${!isLast ? "lg:mb-[40px]" : ""}
-                `}
-              >
-                <ServiceDetailCard
-                  number={item.number}
-                  category={item.category}
-                  title={item.title}
-                  description={item.description}
-                  image={item.image}
-                  color={item.color}
-                  position={isLeft ? "left" : "right"}
-                  isRTL={isRTL}
-                />
-              </div>
-            );
-          })}
-        </div>
+              return (
+                <div
+                  key={item.id}
+                  className={`
+                    ${shouldCenter ? "lg:col-span-2 flex justify-center" : ""}
+                    ${!isLeft ? "lg:mt-[100px]" : ""}
+                    ${!isLast ? "lg:mb-[40px]" : ""}
+                  `}
+                >
+                  <ServiceDetailCard
+                    number={item.number}
+                    category={item.category}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    color={item.color}
+                    position={isLeft ? "left" : "right"}
+                    isRTL={isRTL}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="text-center py-20">
+            <p
+              className="text-xl md:text-2xl text-secondary opacity-60 font-medium"
+              style={{
+                ...(isRTL && { fontFamily: "LamaSans, sans-serif" }),
+              }}
+            >
+              {t("noItems")}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

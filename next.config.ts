@@ -22,6 +22,17 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
   },
 
+  async redirects() {
+    return [
+      // Redirect /new to main website
+      {
+        source: '/new',
+        destination: 'https://macc-fm.com',
+        permanent: false,
+      },
+    ];
+  },
+
   // ═══════════════════════════════════════════════════════════
   // ⚡ Compiler Optimizations
   // ═══════════════════════════════════════════════════════════

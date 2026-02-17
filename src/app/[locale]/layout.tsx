@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";
 import { ToastProvider } from "@/components/Providers/ToastProvider";
+import Maintenance from "@/components/layout/Maintenance";
 
 export const metadata: Metadata = {
   title: "MACC - Modern Architecture",
@@ -73,6 +74,7 @@ export default async function LocaleLayout({
 
   // Fetch messages
   const messages = await getMessages({ locale });
+  const isMaintenance = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : ""}>
@@ -82,16 +84,20 @@ export default async function LocaleLayout({
           messages={messages}
           timeZone="Asia/Riyadh"
         >
-          <Providers>
-            <LayoutGroup>
-              <Navbar />
-              <AppRouterCacheProvider>
-                {children}
-                <ToastProvider />
-              </AppRouterCacheProvider>
-              <Footer />
-            </LayoutGroup>
-          </Providers>
+          {isMaintenance ? (
+            <Maintenance locale={locale} />
+          ) : (
+            <Providers>
+              <LayoutGroup>
+                <Navbar />
+                <AppRouterCacheProvider>
+                  {children}
+                  <ToastProvider />
+                </AppRouterCacheProvider>
+                <Footer />
+              </LayoutGroup>
+            </Providers>
+          )}
         </NextIntlClientProvider>
       </body>
     </html>

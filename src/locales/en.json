@@ -385,7 +385,8 @@
     },
     "details": {
       "sectionTitle": "Service overview !",
-      "discoverMore": "DISCOVER MORE"
+      "discoverMore": "DISCOVER MORE",
+      "noItems": "No items yet"
     }
   }
 }

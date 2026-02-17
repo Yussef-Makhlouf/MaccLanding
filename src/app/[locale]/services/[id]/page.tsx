@@ -53,11 +53,11 @@ export async function generateMetadata({
         description: service.header.description,
         images: service.services[0]?.image
           ? [
-              {
-                url: service.services[0].image,
-                alt: service.header.title,
-              },
-            ]
+            {
+              url: service.services[0].image,
+              alt: service.header.title,
+            },
+          ]
           : [],
         type: "website",
         locale: locale === "ar" ? "ar_SA" : "en_US",
@@ -105,7 +105,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
     service = services[0];
   }
 
-  if (!service || !service.services || service.services.length === 0) {
+  if (!service) {
     console.warn("⚠️ No service data available even in fallback:", id);
     notFound();
   }
@@ -122,7 +122,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const customHeroImage = HERO_IMAGES_MAP[service.id];
   const heroImage = customHeroImage
     ? `/images/services-hero/${customHeroImage}`
-    : service.services[0]?.image || "/images/placeholder.jpg";
+    : service.services[1]?.image || "/images/hero.webp";
   const isRTL = locale === "ar";
 
   return (

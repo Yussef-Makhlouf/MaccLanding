@@ -385,7 +385,8 @@
     },
     "details": {
       "sectionTitle": "نظرة عامة على الخدمة !",
-      "discoverMore": "اكتشف المزيد"
+      "discoverMore": "اكتشف المزيد",
+      "noItems": "لا توجد عناصر للخدمه"
     }
   }
 }
