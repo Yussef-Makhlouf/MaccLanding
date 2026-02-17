@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
   }
 
   // ⚠️ تم تعطيل وضع الصيانة - إذا أردت تفعيله مرة أخرى، أزل التعليق عن الكود التالي:
-  /*
+
   if (
     !pathname.startsWith('/api') &&
     !pathname.startsWith('/_next') &&
@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
     const locale = pathname.startsWith('/ar') ? 'ar' : 'en';
     return NextResponse.redirect(new URL(`/${locale}/maintenance`, request.url));
   }
-  */
+
 
   return NextResponse.next();
 }
