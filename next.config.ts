@@ -4,9 +4,10 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
-  // ═══════════════════════════════════════════════════════════
-  // 🖼️ Image Optimization
-  // ═══════════════════════════════════════════════════════════
+  // Standalone build for VPS
+  output: 'standalone',
+
+  // Image improvements
   images: {
     remotePatterns: [
       {
@@ -14,31 +15,27 @@ const nextConfig: NextConfig = {
         hostname: "ik.imagekit.io",
       },
     ],
-
-    formats: ['image/avif', 'image/webp'], //  AVIF WebP
+    formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60, // Cache
-    dangerouslyAllowSVG: true, //SVG
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
   },
 
   // ═══════════════════════════════════════════════════════════
   // ⚡ Compiler Optimizations
   // ═══════════════════════════════════════════════════════════
   compiler: {
-    //  console.log production
     removeConsole: process.env.NODE_ENV === 'production' ? {
-      exclude: ['error', 'warn'], //  error و warn 
+      exclude: ['error', 'warn'],
     } : false,
   },
 
   // ═══════════════════════════════════════════════════════════
   // 🚀 Performance Optimizations
   // ═══════════════════════════════════════════════════════════
-  reactStrictMode: true, // تفعيل Strict Mode
-  poweredByHeader: false, // إخفاء X-Powered-By header
+  reactStrictMode: true,
+  poweredByHeader: false,
 
   // ═══════════════════════════════════════════════════════════
   // 🔒 Security & Performance Headers
@@ -48,7 +45,6 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         headers: [
-          // Security Headers
           {
             key: 'X-DNS-Prefetch-Control',
             value: 'on'
@@ -87,7 +83,7 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Cache 
+      // Cache للصور
       {
         source: '/images/:path*',
         headers: [
@@ -97,7 +93,7 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Cache  fonts
+      // Cache للخطوط
       {
         source: '/fonts/:path*',
         headers: [
@@ -111,29 +107,21 @@ const nextConfig: NextConfig = {
   },
 
   // ═══════════════════════════════════════════════════════════
-  // 📦 Webpack Optimizations (Optional)
+  // 📦 Webpack Optimizations
   // ═══════════════════════════════════════════════════════════
   webpack: (config, { dev, isServer }) => {
-    // Production optimizations
     if (!dev && !isServer) {
-      // Tree shaking 
       config.optimization = {
         ...config.optimization,
         usedExports: true,
         sideEffects: false,
       };
     }
-
     return config;
   },
 
   // ═══════════════════════════════════════════════════════════
-  // 🌐 Internationalization (  next-intl)
-  // ═══════════════════════════════════════════════════════════
-  // withNextIntl
-
-  // ═══════════════════════════════════════════════════════════
-  // 📊 Analytics & Monitoring (Optional)
+  // 📊 Analytics & Monitoring
   // ═══════════════════════════════════════════════════════════
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react'],
