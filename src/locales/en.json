@@ -1,0 +1,391 @@
+{
+  "Navbar": {
+    "home": "HOME",
+    "about": "ABOUT US",
+    "services": "SERVICES",
+    "clients": "OUR CLIENTS",
+    "career": "CAREER",
+    "contact": "CONTACT US",
+    "login": "LOGIN",
+    "switchToArabic": "العربية",
+    "letsMeet": "Let's meet",
+    "location": "Thuwal - jeddah\nsaudi arabia.",
+    "letsTalk": "Let's talk",
+    "followUs": "Follow us here",
+    "selectLanguage": "Select language"
+  },
+  "Common": {
+    "error": {
+      "title": "Something went wrong!",
+      "description": "We apologize for the inconvenience. please try again.",
+      "retry": "Try again"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist or has been moved.",
+      "goHome": "Go home"
+    }
+  },
+  "Hero": {
+    "letsText": "LET'S",
+    "buildText": "BUILD",
+    "smartText": "SMART",
+    "facilitiesText": "FACILITIES!",
+    "exploreButton": "EXPLORE OUR SERVICES"
+  },
+  "Stats": {
+    "areaCoverage": "AREA COVERAGE IN SQ",
+    "valueAssets": "VALUE OF MANAGED ASSETS",
+    "volumeOperation": "VOLUME OF OPERATION",
+    "totalTasks": "TOTAL OF TASKS PERFORMED",
+    "workforceCount": "WORKFORCE/SPECIALIST COUNT",
+    "clientsSatisfaction": "CLIENTS SATISFACTION"
+  },
+  "Footer": {
+    "followUs": "Follow us here",
+    "coolIdea": "Managing Assets,",
+    "collaborate": "Creating Comfort !",
+    "general": "General",
+    "home": "Home",
+    "aboutUs": "About us",
+    "services": "Services",
+    "careers": "Careers",
+    "contactUs": "Contact us",
+    "servicesTitle": "Services",
+    "maintenanceServices": "Maintenance services",
+    "officeServices": "Office services",
+    "facilityServices": "Facility services",
+    "groundServices": "Ground services",
+    "accommodationServices": "Accommodation services",
+    "connectWithUs": "Connect with us",
+    "hqLocation": "Hq location on google maps",
+    "allRightsReserved": "Macc all rights reserved",
+    "privacyPolicy": "Privacy policy",
+    "termsOfUse": "Terms of use",
+    "BECOMEAVENDOR": "Bcome a vendor at MACCFM"
+  },
+  "About": {
+    "hero": {
+      "hello": "HELLO,",
+      "were": "WE'RE",
+      "company": "MACC FM",
+      "tagline": "Delivering reliability through smart facility management.",
+      "discoverMore": "DISCOVER MORE",
+      "managingAssets": "Managing Assets,",
+      "creatingComfort": "Creating Comfort!",
+      "quote": "A trusted saudi brand delivering facility management, maintenance, office, ground, and accommodation services for safe, efficient, sustainable operations."
+    },
+    "visionMission": {
+      "title": "Vision, mission & core values!",
+      "description": "At MACC FM, we believe that success is never a coincidence – it's built on a clear vision, a steadfast mission, and strong values that form the foundation of every achievement we make.",
+      "visionTitle": "Our Vision",
+      "visionText": "We power the kingdom's growth by managing facilities that people love to use comfortable, reliable and ready for tomorrow."
+    },
+    "mission": {
+      "title": "Our mission",
+      "items": [
+        {
+          "title": "SAFEGUARD PEOPLE AND REPUTATION",
+          "description": "Adhere strictly to a zero-harm philosophy and maintain full compliance with osha, nfpa, ashrae, and iso 9001/14001/45001 standards."
+        },
+        {
+          "title": "ENSURE ENGINEER AVAILABILITY",
+          "description": "Implement reliability-focused and predictive maintenance strategies to prevent equipment failures and maximize lifecycle performance."
+        },
+        {
+          "title": "ENHANCE STAKEHOLDER EXPERIENCE",
+          "description": "Deliver premium-level services and maintain immaculate environments, conducting operations discreetly for all stakeholders."
+        },
+        {
+          "title": "ADHERE TO INTERNATIONAL STANDARDS",
+          "description": "Operate in alignment with iso 41001 (facility management) and iso 55001 (asset management), underpinned by audited slas and kpis."
+        },
+        {
+          "title": "ADVANCE DECARBONISATION EFFORTS",
+          "description": "Achieve measurable reductions in energy use, water consumption and waste generation; prioritise sustainable procurement and materials selection."
+        },
+        {
+          "title": "ACCELERATE DIGITAL INTEGRATION",
+          "description": "Utilise integrated bms, cafm and iot systems, supported by clear dashboards that transform data into actionable insights."
+        },
+        {
+          "title": "BUILD SAUDI CAPABILITY",
+          "description": "Cultivate local talent and leadership while embedding global best practices throughout operations."
+        },
+        {
+          "title": "MAINTAIN READINESS AT ALL TIMES",
+          "description": "Provide 24/7 response capabilities, employ crisis-tested procedures and ensure robust business-continuity measures."
+        }
+      ]
+    },
+    "coreValues": {
+      "title": "Our values",
+      "values": [
+        {
+          "letter": "M",
+          "title": "Mastery.",
+          "description": "Craftsmanship and certified technical excellence that you can feel."
+        },
+        {
+          "letter": "A",
+          "title": "Accountability.",
+          "description": "We own outcomes end to end: promise, measure, report, improve."
+        },
+        {
+          "letter": "C",
+          "title": "Continuous improvement.",
+          "description": "Learn fast, fix fast, raise the bar."
+        },
+        {
+          "letter": "C",
+          "title": "Confidentiality & integrity.",
+          "description": "Discretion as default; ethical, compliant and audit ready."
+        },
+        {
+          "letter": "F",
+          "title": "Future ready.",
+          "description": "Digital, data led and focused to meet tomorrow's demands."
+        },
+        {
+          "letter": "M",
+          "title": "Measured impact.",
+          "description": "Transparent slas, kpis and tco/lca thinking that link spend to value."
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Our Accreditations & Certifications !",
+      "description": "Our certifications reflect our commitment to quality, safety, and international standards across all operations.",
+      "items": [
+        {
+          "code": "ISO 9001:2015",
+          "title": "Quality Management System"
+        },
+        {
+          "code": "ISO 45001:2018",
+          "title": "Occupational Health & Safety Management System"
+        },
+        {
+          "code": "ISO 14001:2015",
+          "title": "Environmental Management System"
+        }
+      ]
+    },
+    "achievements": {
+      "title": "Our achievements",
+      "subtitle": "In numbers!",
+      "description": "Over the years, MACC FM has earned the trust of leading clients by maintaining high standards and exceptional service quality.",
+      "stats": [
+        {
+          "label": "Years of experience"
+        },
+        {
+          "label": "Completed projects"
+        },
+        {
+          "label": "Dedicated employees"
+        },
+        {
+          "label": "Clients satisfaction"
+        }
+      ]
+    }
+  },
+  "Clients": {
+    "hero": {
+      "titleLine1": "TRUSTED BY LEADING",
+      "titleLine2": "ORGANIZATIONS",
+      "titleLine3": "ACROSS THE KINGDOM",
+      "subtitle": "From government entities to private corporations — MACC FM proudly serves diverse sectors with excellence.",
+      "cta": "DISCOVER MORE"
+    },
+    "section": {
+      "title": "Our\nclients !",
+      "description": "At MACC FM, we proudly uphold top international standards in quality, safety, and operational excellence — our accreditations stand as proof of our dedication to improvement and trusted partnerships."
+    }
+  },
+  "Career": {
+    "hero": {
+      "title1": "EXPLORE",
+      "title2": "OUR",
+      "title3": "VACANCIES",
+      "description": "At modern architecture contracting company (MACC FM), we believe our people are the foundation of our success. we are committed to building a diverse, innovative, and collaborative work environment where talent is recognized and growth is continuous. whether you're starting your career or looking to take the next step, MACC FM offers exciting opportunities across various fields in facility management, engineering, operations, and support services. join us and be part of shaping the future of integrated solutions in the kingdom and beyond.",
+      "employeesCount": "OVER 1K+",
+      "employeesLabel": "DEDICATED EMPLOYEES"
+    },
+    "applicationForm": {
+      "title": "Apply for position",
+      "applyingFor": "Applying for",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Enter your full name",
+      "phoneNumber": "Phone number",
+      "phoneNumberPlaceholder": "Enter your phone number",
+      "email": "Email address",
+      "emailPlaceholder": "Enter your email address",
+      "uploadCV": "Upload your cv",
+      "uploadSubtext": "Pdf, doc, docx (max 10mb)",
+      "submit": "Submit application",
+      "submitting": "Submitting...",
+      "successMessage": "Application submitted successfully!",
+      "errorMessage": "Failed to submit application. please try again.",
+      "validation": {
+        "required": "This field is required",
+        "fullNameMin": "Name is too short",
+        "fullNameMax": "Name is too long",
+        "invalidEmail": "Invalid email address",
+        "selectCountryCode": "Please select country code",
+        "invalidPhone": "Invalid phone number",
+        "phoneLength": "Phone number length is invalid",
+        "cvRequired": "Cv is required",
+        "cvMaxSize": "File size must be less than 10mb",
+        "cvInvalidType": "Only pdf, doc or docx files are allowed"
+      }
+    },
+    "jobDetails": {
+      "description": "Job description",
+      "responsibilities": "Key responsibilities",
+      "requirements": "Requirements",
+      "applyButton": "APPLY FOR THIS POSITION"
+    },
+    "jobListings": {
+      "title": "Explore our vacancies !",
+      "subtitle": "Where innovation meets infrastructure — build the future with precision and purpose.",
+      "viewAll": "VIEW ALL",
+      "viewDetails": "VIEW DETAILS",
+      "applyNow": "APPLY NOW",
+      "department": "Engineering",
+      "jobTitle": "Hvac technician",
+      "location": "Riyadh",
+      "type": "Full-time",
+      "noJobsAvailable": "No job openings available at the moment"
+    },
+    "cta": {
+      "title": "Join our team !",
+      "description": "At MACC FM, we welcome professionals who share our passion for excellence and reliability. fill out the form below and take the first step towards your future with us.",
+      "bottomText": "Your next opportunity starts here — apply with confidence!",
+      "button": "JOIN OUR TEAM NOW"
+    },
+    "faq": {
+      "title": "Faqs",
+      "items": {
+        "0": {
+          "question": "What services does macc-fm provide?",
+          "answer": "Macc-fm provides comprehensive facility management services including hvac maintenance, electrical services, plumbing, cleaning, security, and integrated facility solutions for commercial, industrial, and residential properties."
+        },
+        "1": {
+          "question": "Can you manage large-scale corporate facilities?",
+          "answer": "Absolutely. we specialize in handling large office buildings, industrial facilities, and residential compounds with professional management and efficiency."
+        },
+        "2": {
+          "question": "Do you provide customized solutions for clients?",
+          "answer": "Yes, we provide tailored facility management solutions based on each client's specific needs and requirements."
+        },
+        "3": {
+          "question": "How can i request your services?",
+          "answer": "You can request our services by contacting us through our website, phone, or email. our team will respond promptly to discuss your requirements."
+        },
+        "4": {
+          "question": "How do you ensure quality and reliability?",
+          "answer": "We ensure quality through certified professionals, regular training, quality control processes, and adherence to international standards."
+        }
+      }
+    },
+    "privacyModal": {
+      "title": "Privacy policy agreement",
+      "heading": "At MACC FM,\nwe value your privacy.",
+      "description1": "Before applying, please review and accept our data policy.",
+      "description2": "We collect and store your information only to process job applications and communicate with you regarding your submission.",
+      "checkboxText": "By click \"continue to careers\", you agree",
+      "terms": "Terms & conditions",
+      "privacy": "Privacy policy",
+      "button": "CONTINUE TO CAREERS"
+    },
+    "successModal": {
+      "title": "Thank you for applying!",
+      "subtitle": "Our hr team will contact you soon"
+    }
+  },
+  "Contact": {
+    "contactInfo": {
+      "title": "LET'S TALK\nBUSINESS",
+      "infoEmail": {
+        "title": "For information and queries contact:",
+        "value": "info@macc-fm.com"
+      },
+      "businessEmail": {
+        "title": "For business queries contact:",
+        "value": "bss@macc-fm.com"
+      },
+      "phone": {
+        "title": "Contact number:",
+        "value": "920035472"
+      },
+      "website": {
+        "title": "For vendor registration:",
+        "value": "Bcome a vendor at MACCFM"
+      }
+    },
+    "contactForm": {
+      "title": "Send us a message :",
+      "subtitle": "We value collaboration. tell us about your project or join our trusted vendor network.",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Enter your name here",
+      "companyName": "Company name",
+      "companyNamePlaceholder": "Enter your company name here",
+      "phoneNumber": "Phone number",
+      "phoneNumberPlaceholder": "Enter your phone",
+      "companyEmail": "Company email",
+      "companyEmailPlaceholder": "Enter your email here",
+      "message": "Send us a message",
+      "messagePlaceholder": "Write here...",
+      "privacyText": "By submitting this form, i agree to MACC FM's",
+      "privacyLink": "Privacy policy",
+      "privacyConsent": "And consent to being contacted regarding my inquiry.",
+      "sendButton": "SEND MESSAGE",
+      "validationError": "Please fill all required fields and accept the privacy policy",
+      "successMessage": "Message sent successfully!",
+      "errorMessage": "An error occurred while sending. please try again.",
+      "validation": {
+        "required": "This field is required",
+        "fullNameMin": "Full name must be at least 2 characters",
+        "fullNameMax": "Full name must be less than 100 characters",
+        "companyMax": "Company name must be less than 100 characters",
+        "invalidEmail": "Invalid email format",
+        "selectCountryCode": "Please select country code",
+        "invalidPhone": "Invalid phone number",
+        "phoneLength": "Phone number must be between 7 and 15 digits",
+        "messageMin": "Message must be at least 10 characters",
+        "messageMax": "Message must be less than 1000 characters",
+        "privacy": "You must accept the privacy policy"
+      }
+    },
+    "map": {
+      "title": "Our location",
+      "subtitle": "Find us easily and connect with our team",
+      "header": "MACC FM headquarters",
+      "location": "MACC FM | modern architecture contracting co. branch",
+      "openInMaps": "Open in google maps"
+    }
+  },
+  "Services": {
+    "hero": {
+      "label": "SERVICES, WE PROVIDE !",
+      "title1": "Comprehensive facility",
+      "title2": "Management,",
+      "title2Gray": "Redefined",
+      "description": "From maintenance to operations, we deliver integrated facility solutions that ensure performance, safety, and efficiency across every property we manage.",
+      "contactButton": "CONTACT US",
+      "yearsExp": "Years of experience",
+      "completedProjects": "Completed projects",
+      "clientsSatisfaction": "Clients satisfaction"
+    },
+    "section": {
+      "title": "What we do !",
+      "seeMore": "SEE MORE"
+    },
+    "details": {
+      "sectionTitle": "Service overview !",
+      "discoverMore": "DISCOVER MORE"
+    }
+  }
+}

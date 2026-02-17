@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ========================================
+   Font Face - Lama Sans
+   ======================================== */
+@font-face {
+  font-family: "LamaSans";
+  src: url("/fonts/LamaSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LamaSans";
+  src: url("/fonts/LamaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LamaSans";
+  src: url("/fonts/LamaSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LamaSans";
+  src: url("/fonts/LamaSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LamaSans";
+  src: url("/fonts/LamaSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   Font Face - Acumin Variable Concept (English)
+   ======================================== */
+@font-face {
+  font-family: "Acumin Variable Concept";
+  src: url("/fonts/acumin/Acumin-Variable-Concept.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   Design System Variables
+   ======================================== */
+:root {
+  /* Colors */
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #15ac9e;
+  --primary-light: #4ecdc4;
+  --primary-dark: #0e7c70;
+  --secondary: #000000;
+  --accent: #4ecdc4;
+
+  /* Spacing */
+  --navbar-height: 88px;
+  --section-padding: 80px;
+
+  /* Transitions */
+  --transition-base: 300ms;
+  --transition-slow: 500ms;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --font-sans: "Acumin Variable Concept", sans-serif;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Language-specific typography */
+html[lang="en"] body,
+html[dir="ltr"] body {
+  font-family: "Acumin Variable Concept", sans-serif;
+}
+
+html[lang="ar"] body,
+html[dir="rtl"] body {
+  font-family: "LamaSans", sans-serif;
+}
+
+/* ========================================
+   Component Styles
+   ======================================== */
+.nav-link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--transition-base) ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+@keyframes slideFromTopLeft {
+  from {
+    transform: translate(-400px, -100px);
+    opacity: 0;
+    -webkit-transform: translate(-400px, -100px);
+    -moz-transform: translate(-400px, -100px);
+    -ms-transform: translate(-400px, -100px);
+    -o-transform: translate(-400px, -100px);
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottomRight {
+  from {
+    transform: translate(400px, 40px);
+    opacity: 0;
+    -webkit-transform: translate(400px, 40px);
+    -moz-transform: translate(400px, 40px);
+    -ms-transform: translate(400px, 40px);
+    -o-transform: translate(400px, 40px);
+}
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+}
+}
+/* Remove browser autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #111827 !important; /* gray-900 */
+  transition: background-color 9999s ease-in-out 0s;
+}
